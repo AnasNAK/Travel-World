@@ -1,9 +1,10 @@
 <?php
 
-use App\Models\Adventure;
 use App\Models\User;
+use App\Models\Adventure;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
+use App\Http\Controllers\AdventureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,18 +33,9 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 // ]);
 
 
-Route::get('/', function () {
-    return view('Home',[
-        'adventures' => adventure::all()
-    ]);
-});
+Route::get('/', [AdventureController::class, 'index']);
+
+Route::get('/adventure/{adventure}', [AdventureController::class, 'show']);
 
 
-Route::get('/home/{adventure}',function(Adventure $adventure){
-
-return view('Adventure',[
-    'adventure' => $adventure
-    ]);
-
-
-});
+    

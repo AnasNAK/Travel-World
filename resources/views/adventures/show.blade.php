@@ -1,6 +1,4 @@
-@extends('layout')
-
-@section('Content')
+<x-layout>
     <a href="/" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back
     </a>
     <div class="mx-4">
@@ -17,7 +15,7 @@
 
                 </ul>
                 <div class="text-lg my-4">
-                    <i class="fa-solid fa-location-dot"></i> Daytona, FL
+                    <i class="fa-solid fa-location-dot"></i> {{$adventure->destination->name}}
                 </div>
                 <ul class="flex">
                     <li class="bg-black text-white rounded-xl px-3 py-1 mr-2">
@@ -42,7 +40,7 @@
                         </p>
                         <div class="text-xl font-ms mb-4">Date : {{ $adventure->updated_at }}</div>
 
-               
+
                     </div>
                 </div>
 
@@ -50,4 +48,5 @@
 
         </x-card>
     </div>
-@endsection
+
+</x-layout>

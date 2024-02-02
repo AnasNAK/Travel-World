@@ -5,7 +5,7 @@
         <img class="hidden w-48 mr-6 md:block" src="{{ asset('images/logo.png') }}" alt="" />
         <div>
             <h3 class="text-2xl underline my-2">
-                <a href="/home/{{ $adventure->id }}">{{ $adventure->title }}</a>
+                <a href="/adventure/{{ $adventure->id }}">{{ $adventure->title }}</a>
             </h3>
 
             <ul class="flex">

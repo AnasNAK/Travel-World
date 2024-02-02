@@ -11,22 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        schema::disableForeignKeyConstraints();
-        Schema::create('adventures', function (Blueprint $table) {
+        Schema::create('destinations', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('advice');
-            $table->longText('description');
-            $table->foreignId('destination_id')->constrained('destinations');
+            $table->string('name');
             $table->timestamps();
         });
     }
 
-    /** 
+    /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('adventures');
+        Schema::dropIfExists('destinations');
     }
 };
